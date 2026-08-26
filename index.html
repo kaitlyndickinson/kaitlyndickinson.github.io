@@ -11,10 +11,29 @@
 <main>
 
   <header class="hero">
-    <h1>Kaitlyn Dickinson</h1>
-    <p class="tagline">Software Engineer working across the stack, focused on data engineering and AI/automation.</p>
-    <p class="currently"><span class="label">currently</span> Application Developer III at EchoStar — building internal tooling, data pipelines, and AI integrations.</p>
+    <div class="hero-top">
+      <h1>Kaitlyn Dickinson</h1>
+      <a href="Resume.pdf" target="_blank" rel="noopener" class="resume-btn">Resume ↗</a>
+    </div>
+    <p class="tagline">Software Engineer</p>
+    <div class="bubbles">
+      <span class="bubble bubble-domain">📊 Data</span>
+      <span class="bubble bubble-domain">🗺️ Mapping</span>
+      <span class="bubble bubble-domain">🛠️ Tooling</span>
+      <span class="bubble bubble-domain">🤖 AI/ML</span>
+      <span class="bubble">🥾 Hiking</span>
+      <span class="bubble">🎮 Video Games</span>
+    </div>
+    <p class="education">B.S. Software Engineering Technology — Oregon Institute of Technology</p>
   </header>
+
+  <section>
+    <h2><span class="label">skills</span></h2>
+    <p class="stack-line"><strong>Languages</strong> — Python · SQL · TypeScript · JavaScript · Java · C++</p>
+    <p class="stack-line"><strong>Frameworks & Libraries</strong> — Django · FastAPI · Flask · Angular · Streamlit · LangChain</p>
+    <p class="stack-line"><strong>Cloud & DevOps</strong> — AWS · Airflow · Docker · CI/CD · Nginx</p>
+    <p class="stack-line"><strong>Databases & Tools</strong> — Snowflake · PostgreSQL · Databricks · ChromaDB · Git</p>
+  </section>
 
   <section>
     <h2><span class="label">work experience</span></h2>
@@ -25,12 +44,12 @@
         <span class="dates">Dec 2024 – Present</span>
       </li>
       <li>
-        <span class="role">Software Developer Intern</span>
+        <span class="role">Software Engineering Co-Op | MECOP</span>
         <span class="company">Biamp Systems</span>
         <span class="dates">Jun 2023 – Dec 2023</span>
       </li>
       <li>
-        <span class="role">Software Developer Intern</span>
+        <span class="role">Software Engineering Co-Op | MECOP</span>
         <span class="company">Digimarc Corporation</span>
         <span class="dates">Jun 2022 – Dec 2022</span>
       </li>
@@ -59,10 +78,34 @@
 
     <article class="project">
       <div class="project-head">
-        <h3>Internal Engineering AI Assistant</h3>
+        <h3>Internal Engineering AI Assistant (Biamp Systems)</h3>
       </div>
       <p class="project-desc">A RAG-based chatbot built for an engineering team with document ingestion, multi-hop retrieval, and a ChromaDB vector store, built end to end.</p>
       <p class="learning"><span class="label">learned</span> How to design a RAG pipeline from scratch: chunking (including C++ code), embeddings, multi-step retrieval routing, designing effective and maintainable pipelines for AI applications, and optimizing for multiple use-cases.</p>
+    </article>
+
+    <article class="project">
+      <div class="project-head">
+        <h3>ESPN College Pick 'Ems Predictor</h3>
+        <div class="project-links">
+          <a href="https://github.com/kaitlyndickinson/ESPN-College-Pick-ems-OpenAI" target="_blank" rel="noopener" class="project-link">GitHub ↗</a>
+          <a href="https://espn-college-pick-ems.streamlit.app/" target="_blank" rel="noopener" class="project-link">Website ↗</a>
+        </div>
+      </div>
+      <p class="project-desc">A just-for-fun side project to automate my picks for ESPN's College Football Pick 'Em pool every week.</p>
+      <p class="learning"><span class="label">learned</span> Individual API calls with specific relevant analytics context did better than passing in all the history for that team every week and the AI does better than me at making picks (top 99.9% percentile high, started in 2024).</p>
+    </article>
+
+    <article class="project">
+      <div class="project-head">
+        <h3>Pokopia Tracker</h3>
+        <div class="project-links">
+          <a href="https://github.com/kaitlyndickinson/pokopia-tracker" target="_blank" rel="noopener" class="project-link">GitHub ↗</a>
+          <a href="https://pokopia-tracker-tau.vercel.app/" target="_blank" rel="noopener" class="project-link">Website ↗</a>
+        </div>
+      </div>
+      <p class="project-desc">A personal habitat and Pokémon collection tracker for Pokopia: search and filter habitats by type and area, track catch progress across 221 spawns, and import/export progress.</p>
+      <p class="learning"><span class="label">learned</span> How to deploy an app on Vercel and work with local storage for persisting progress client-side.</p>
     </article>
 
     <article class="project">
@@ -72,23 +115,6 @@
       <p class="project-desc">An automated pipeline that ingests knowledge base content from an internal CMS, strips HTML, filters by metadata, and syncs changes to a customer-facing support platform.</p>
       <p class="learning"><span class="label">learned</span> How to design a change-detection-based sync pipeline that reconciles state across two systems without manual intervention.</p>
     </article>
-
-    <article class="project">
-      <div class="project-head">
-        <h3>ESPN College Pick 'Ems Predictor</h3>
-        <div class="project-links">
-          <a href="https://github.com/kaitlyndickinson/ESPN-College-Pick-ems-OpenAI" target="_blank" rel="noopener" class="project-link">GitHub ↗</a>
-        </div>
-      </div>
-      <p class="project-desc">A just-for-fun side project to automate my picks for ESPN's College Football Pick 'Em pool every week, using OpenAI's API but built to easily interchange.</p>
-      <p class="learning"><span class="label">learned</span> Individual API calls with specific relevant analytics context did better than passing in all the history for that team every week and the AI does better than me at making picks (top 99.9% percentile high, started in 2024).</p>
-    </article>
-  </section>
-
-  <section>
-    <h2><span class="label">tech stack</span></h2>
-    <p class="stack-line"><strong>Languages</strong> — Python · SQL · TypeScript · JavaScript</p>
-    <p class="stack-line"><strong>Frameworks & Tools</strong> — Django · FastAPI · Flask · Angular · PostgreSQL · Snowflake · Airflow · Databricks · Streamlit · AWS · Docker · Nginx · ChromaDB · RAG/retrieval pipelines</p>
   </section>
 
   <footer>
