@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESPN College Pick'em Predictor Blog | Kaitlyn Dickinson</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <main>
+
+    <header class="hero">
+      <div class="hero-top">
+        <h1>ESPN College Pick'em Predictor</h1>
+        <div class="hero-actions">
+          <a href="index.html" class="resume-btn">← Portfolio</a>
+        </div>
+      </div>
+      <p class="tagline">Weekly college football picks from a model I built, posted before kickoff, unedited.</p>
+    </header>
+
+        <section>
+      <h2><span class="label">about</span></h2>
+      <p class="project-desc">This is a project I started in 2024 as a CLI tool using the <a
+          href="https://api.collegefootballdata.com/getting-started" target="_blank" rel="noopener">College Football
+          Data API</a>.
+        It started as a simple script to automate my picks for ESPN's College Pick'em pool (top 99.9th
+        percentile in 2025, on prompt and data formatting alone using the latest OpenAI model at the time), but I
+        later added a trained statistical model to generate the predictions before
+        passing them to the LLM for formatting.
+        The implementation is private for now, but I'll be posting the unedited results every week.<br><br>
+
+        Realistically, I probably got lucky in 2025 since there was no trained model yet and just an LLM working off data I provided (though, I'd review the outputs every week with friends and other football fans to get feedback and tweak the data being pulled and what gets passed into the prompt). I do think
+        that part held up well, but I can't fully separate "good setup" from "good luck" with one season of results. 2026's the actual test: XGBoost and the LLM working together, and I'm curious how much the baseline ends up shaping the LLM's calls. It's been a learning curve but I ended up with a 71% accurate model on <b>leak-free data.</b></p>
+
+      <p class="learning"><span class="label">aside</span> <em>That means it's trained on seasons before
+        the ones it's tested on, not a random shuffle across years, so it can't accidentally learn from
+        information it wouldn't actually have at prediction time. That's a common pitfall where sports
+        models look great in testing and fall apart in the real world.</em></p><br>
+
+      <p class="project-desc">I'll keep this updated with weekly posts, and post a full summary at the end of the season.</p>
+    </section>
+
+    <section id="posts">
+      <h2><span class="label">weekly predictions</span></h2>
+
+      <details class="project" open>
+        <summary class="project-head week-summary">
+          <h3><span class="chevron">▸</span>Week 1, 2026</h3>
+          <span class="dates">Posted Sep 4, 2026</span>
+        </summary>
+        <p class="project-desc"><strong>Model used: Claude Fable 5.</strong> No 2026 games in the books yet for anyone, so these lean entirely on preseason signal: SP+, returning production, and last year's form rather than anything from this season. Confidence tops out at 72% (Ole Miss over Louisville); the only non-favorite the AI picked this week (from the ESPN College Pick'em pool) was Florida State over SMU (39% picked Florida State).</p>
+
+        <p class="label subhead">picks</p>
+        <ul class="experience-list">
+          <li>
+            <span class="role">Duke vs Tulane</span>
+            <span class="company">Duke over Tulane, 31-23</span>
+            <span class="dates">66% confidence</span>
+          </li>
+          <li>
+            <span class="role">Cincinnati vs Boston College</span>
+            <span class="company">Cincinnati over Boston College, 28-21</span>
+            <span class="dates">66% confidence</span>
+          </li>
+          <li>
+            <span class="role">Auburn vs Baylor</span>
+            <span class="company">Auburn over Baylor, 30-23</span>
+            <span class="dates">66% confidence</span>
+          </li>
+          <li>
+            <span class="role">Colorado State vs Wyoming</span>
+            <span class="company">Colorado State over Wyoming, 24-21</span>
+            <span class="dates">55% confidence</span>
+          </li>
+          <li>
+            <span class="role">LSU vs Clemson</span>
+            <span class="company">LSU over Clemson, 27-20</span>
+            <span class="dates">64% confidence</span>
+          </li>
+          <li>
+            <span class="role">Hawai'i vs UNLV</span>
+            <span class="company">UNLV over Hawai'i, 28-24</span>
+            <span class="dates">60% confidence</span>
+          </li>
+          <li>
+            <span class="role">Nevada vs Western Kentucky</span>
+            <span class="company">Western Kentucky over Nevada, 27-23</span>
+            <span class="dates">54% confidence</span>
+          </li>
+          <li>
+            <span class="role">California vs UCLA</span>
+            <span class="company">California over UCLA, 27-24</span>
+            <span class="dates">62% confidence</span>
+          </li>
+          <li>
+            <span class="role">Ole Miss vs Louisville</span>
+            <span class="company">Ole Miss over Louisville, 31-24</span>
+            <span class="dates">72% confidence</span>
+          </li>
+          <li>
+            <span class="role">Florida State vs SMU</span>
+            <span class="company">Florida State over SMU, 27-24</span>
+            <span class="dates">52% confidence</span>
+          </li>
+        </ul>
+
+        <p class="label subhead">results: 7-3, updated Sep 13, 2026</p>
+        <p class="project-desc">
+          That lines up almost exactly with the 71% backtested baseline. The three misses (Nevada/Western Kentucky, California/UCLA, Florida State/SMU) averaged 56% confidence going in; the seven correct picks averaged 64%.</p>
+
+        <ul class="experience-list">
+          <li>
+            <span class="role">Duke vs Tulane</span>
+            <span class="company">✅ Duke won, 17-3</span>
+            <span class="dates">picked 31-23</span>
+          </li>
+          <li>
+            <span class="role">Cincinnati vs Boston College</span>
+            <span class="company">✅ Cincinnati won, 34-15</span>
+            <span class="dates">picked 28-21</span>
+          </li>
+          <li>
+            <span class="role">Auburn vs Baylor</span>
+            <span class="company">✅ Auburn won, 17-16</span>
+            <span class="dates">picked 30-23</span>
+          </li>
+          <li>
+            <span class="role">Colorado State vs Wyoming</span>
+            <span class="company">✅ Colorado State won, 35-13</span>
+            <span class="dates">picked 24-21</span>
+          </li>
+          <li>
+            <span class="role">LSU vs Clemson</span>
+            <span class="company">✅ LSU won, 51-10</span>
+            <span class="dates">picked 27-20</span>
+          </li>
+          <li>
+            <span class="role">Hawai'i vs UNLV</span>
+            <span class="company">✅ UNLV won, 21-6</span>
+            <span class="dates">picked 28-24</span>
+          </li>
+          <li>
+            <span class="role">Nevada vs Western Kentucky</span>
+            <span class="company">❌ Nevada won, 49-14</span>
+            <span class="dates">picked WKU, 27-23</span>
+          </li>
+          <li>
+            <span class="role">California vs UCLA</span>
+            <span class="company">❌ UCLA won, 45-24</span>
+            <span class="dates">picked Cal, 27-24</span>
+          </li>
+          <li>
+            <span class="role">Ole Miss vs Louisville</span>
+            <span class="company">✅ Ole Miss won, 41-38</span>
+            <span class="dates">picked 31-24</span>
+          </li>
+          <li>
+            <span class="role">Florida State vs SMU</span>
+            <span class="company">❌ SMU won, 27-24</span>
+            <span class="dates">picked FSU, 27-24</span>
+          </li>
+        </ul>
+      </details>
+
+      <!--
+        WEEKLY POST TEMPLATE: copy this block above the most recent week's
+        post for each new week (newest post first). Each week is a native
+        <details>/<summary> element. No JS needed, click the title row to
+        expand or collapse it. Only the newest week should have the `open`
+        attribute; remove `open` from the previous week's <details> when you
+        add a new one, so exactly one week starts expanded.
+
+        STEP 1: post this part before kickoff.
+
+      <details class="project" open>
+        <summary class="project-head week-summary">
+          <h3><span class="chevron">▸</span>Week N, 2026</h3>
+          <span class="dates">Posted [date]</span>
+        </summary>
+        <p class="project-desc"><strong>Model used: [Model].</strong> [Short blurb about the week: how
+          confident overall, anything notable, no implementation specifics.]</p>
+
+        <p class="label subhead">picks</p>
+        <ul class="experience-list">
+          <li>
+            <span class="role">[Home] vs [Away]</span>
+            <span class="company">[Home] over [Away], [score]-[score]</span>
+            <span class="dates">[XX]% confidence</span>
+          </li>
+        </ul>
+      </details>
+
+        STEP 2: once games finish, add this block right after the picks
+        </ul> above and before </details> (don't touch the pre-game section).
+
+        <p class="label subhead">results: [W]-[L], updated [date]</p>
+        <p class="project-desc">[Optional note: confidence split between hits and misses, like Week 1's post.]</p>
+
+        <ul class="experience-list">
+          <li>
+            <span class="role">[Home] vs [Away]</span>
+            <span class="company">✅ or ❌ [Winner] won, [score]-[score]</span>
+            <span class="dates">picked [predicted score]</span>
+          </li>
+        </ul>
+      -->
+    </section>
+
+    <footer>
+      <div class="links">
+        <a href="index.html">Portfolio</a>
+        <a href="https://linkedin.com/in/kaitlyndickinson" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:kaitlynjd.w@gmail.com">Email</a>
+      </div>
+    </footer>
+
+  </main>
+
+</body>
+
+</html>

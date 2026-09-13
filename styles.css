@@ -49,6 +49,41 @@ main {
   gap: 12px 16px;
 }
 
+.hero-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.subhead {
+  margin: 28px 0 10px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.subhead:first-of-type {
+  margin-top: 16px;
+  padding-top: 0;
+  border-top: none;
+}
+
+.week-summary {
+  cursor: pointer;
+}
+
+/* display: flex on .project-head suppresses the native <summary> marker
+   entirely, so this is a hand-drawn chevron instead of relying on ::marker. */
+.chevron {
+  display: inline-block;
+  color: var(--accent-purple);
+  transition: transform 0.15s ease;
+  margin-right: 6px;
+}
+
+details[open] .chevron {
+  transform: rotate(90deg);
+}
+
 .hero-top h1 {
   margin: 0;
 }
