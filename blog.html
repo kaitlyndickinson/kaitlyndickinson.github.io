@@ -47,7 +47,246 @@
     <section id="posts">
       <h2><span class="label">weekly predictions</span></h2>
 
+      <p class="label subhead">season so far, through week 3</p>
+      <div class="stat-row">
+        <div class="stat-tile">
+          <span class="stat-label">LLM + Baseline</span>
+          <span class="stat-value">66.7%</span>
+          <span class="stat-record">20-10</span>
+        </div>
+        <div class="stat-tile">
+          <span class="stat-label">Baseline only</span>
+          <span class="stat-value">63.3%</span>
+          <span class="stat-record">19-11</span>
+        </div>
+      </div>
+      <p class="project-desc">Picks generated before kickoff each week count, whichever model I actually
+        ran (or the best of a few, on weeks I ran more than one), not just the weeks I remembered to click
+        submit on ESPN. LLM + Baseline is the app's normal mode: the quant model's win probability feeds
+        the LLM prompt, and the LLM makes the final call. Baseline only is the same quant model with no
+        LLM step, tracked purely as a comparison.</p>
+
       <details class="project" open>
+        <summary class="project-head week-summary">
+          <h3><span class="chevron">▸</span>Week 3, 2026</h3>
+          <span class="dates">Posted Sep 22, 2026</span>
+        </summary>
+        <p class="project-desc"><strong>⚠️ Not actually submitted to ESPN this week.</strong> I
+          <strong>did</strong> run the model before kickoff like usual, I just forgot to enter the picks
+          in the pool itself, so this week doesn't count toward my real ESPN pool standing (still counts
+          toward the season tracker above though, since that one only cares about picks generated before
+          kickoff). Since I had the model output anyway, I ran it as a comparison: Claude Opus 5, Claude
+          Fable 5, and the raw XGBoost baseline (statistical model only, no LLM at all) against the same
+          10 games, to start separating how much of the accuracy is the underlying stats vs. the LLM layer
+          on top of it. Fable was the better of the two LLM runs this week (7-3 vs. Opus's 6-4), so that's
+          the number counted in the season tracker above.</p>
+
+        <p class="label subhead">model comparison</p>
+        <div class="stat-row stat-row--compact">
+          <div class="stat-tile">
+            <span class="stat-label">Baseline</span>
+            <span class="stat-value">60%</span>
+            <span class="stat-record">6-4</span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-label">Claude Opus 5</span>
+            <span class="stat-value">60%</span>
+            <span class="stat-record">6-4</span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-label">Claude Fable 5</span>
+            <span class="stat-value">70%</span>
+            <span class="stat-record">7-3</span>
+          </div>
+        </div>
+
+        <ul class="experience-list">
+          <li>
+            <span class="role">Auburn vs Florida</span>
+            <span class="company">Baseline ✅ Florida (58%) · Opus ✅ Florida (59%) · Fable ✅ Florida (58%)</span>
+            <span class="dates">actual: Florida 44-39</span>
+          </li>
+          <li>
+            <span class="role">Clemson vs North Carolina</span>
+            <span class="company">Baseline ✅ Clemson (68%) · Opus ✅ Clemson (64%) · Fable ✅ Clemson (64%)</span>
+            <span class="dates">actual: Clemson 28-20</span>
+          </li>
+          <li>
+            <span class="role">Kansas vs Arizona State</span>
+            <span class="company">Baseline ❌ Kansas (53%) · Opus ✅ Arizona State (55%) · Fable ✅ Arizona State (55%)</span>
+            <span class="dates">actual: Arizona State 24-17</span>
+          </li>
+          <li>
+            <span class="role">Louisville vs SMU</span>
+            <span class="company">Baseline ❌ SMU (52%) · Opus ❌ SMU (54%) · Fable ❌ SMU (54%)</span>
+            <span class="dates">actual: Louisville 41-31</span>
+          </li>
+          <li>
+            <span class="role">Maryland vs Virginia Tech</span>
+            <span class="company">Baseline ❌ Maryland (67%) · Opus ❌ Maryland (55%) · Fable ❌ Maryland (63%)</span>
+            <span class="dates">actual: Virginia Tech 35-26</span>
+          </li>
+          <li>
+            <span class="role">Northwestern vs Colorado</span>
+            <span class="company">Baseline ✅ Northwestern (78%) · Opus ✅ Northwestern (72%) · Fable ✅ Northwestern (73%)</span>
+            <span class="dates">actual: Northwestern 41-7</span>
+          </li>
+          <li>
+            <span class="role">Ole Miss vs LSU</span>
+            <span class="company">Baseline ✅ Ole Miss (68%) · Opus ❌ LSU (58%) · Fable ✅ Ole Miss (55%)</span>
+            <span class="dates">actual: Ole Miss 32-24</span>
+          </li>
+          <li>
+            <span class="role">San Diego State vs James Madison</span>
+            <span class="company">Baseline ✅ James Madison (75%) · Opus ✅ James Madison (68%) · Fable ✅ James Madison (74%)</span>
+            <span class="dates">actual: James Madison 26-13</span>
+          </li>
+          <li>
+            <span class="role">South Carolina vs Mississippi State</span>
+            <span class="company">Baseline ❌ South Carolina (77%) · Opus ❌ South Carolina (72%) · Fable ❌ South Carolina (72%)</span>
+            <span class="dates">actual: Mississippi State 41-34</span>
+          </li>
+          <li>
+            <span class="role">Vanderbilt vs NC State</span>
+            <span class="company">Baseline ✅ Vanderbilt (69%) · Opus ✅ Vanderbilt (66%) · Fable ✅ Vanderbilt (71%)</span>
+            <span class="dates">actual: Vanderbilt 35-31</span>
+          </li>
+        </ul>
+
+        <p class="project-desc">All three approaches whiffed on the same three games: Louisville/SMU,
+          Maryland/Virginia Tech, and South Carolina/Mississippi State, all double-digit upsets the
+          underlying stats didn't see coming, so that part isn't an LLM problem. Where the LLMs earned
+          their keep was Kansas/Arizona State: the baseline liked Kansas, both LLMs overrode it to Arizona
+          State, and both were right. Opus's one miss that the baseline got right was the opposite move,
+          overriding the baseline from Ole Miss to LSU, and that single override is the entire gap between
+          Opus's 6-4 and Fable's 7-3 this week.</p>
+      </details>
+
+      <details class="project">
+        <summary class="project-head week-summary">
+          <h3><span class="chevron">▸</span>Week 2, 2026</h3>
+          <span class="dates">Posted Sep 12, 2026</span>
+        </summary>
+        <p class="project-desc"><strong>Model used: Claude Opus 5.</strong> Army vs South Florida was
+          repicked with Claude Sonnet 5 after Opus returned no usable response for that one game, noting
+          it here since it's the odd one out. Confidence tops out at 74% (Pittsburgh over UCF); the two
+          picks that went against what the underlying stats model favored were Oklahoma over Michigan and
+          Army over South Florida.</p>
+
+        <p class="label subhead">picks</p>
+        <ul class="experience-list">
+          <li>
+            <span class="role">Air Force vs North Dakota State</span>
+            <span class="company">North Dakota State over Air Force, 24-21</span>
+            <span class="dates">53% confidence</span>
+          </li>
+          <li>
+            <span class="role">Army vs South Florida</span>
+            <span class="company">Army over South Florida, 27-24</span>
+            <span class="dates">53% confidence</span>
+          </li>
+          <li>
+            <span class="role">Boise State vs Memphis</span>
+            <span class="company">Boise State over Memphis, 31-27</span>
+            <span class="dates">60% confidence</span>
+          </li>
+          <li>
+            <span class="role">Illinois vs Duke</span>
+            <span class="company">Illinois over Duke, 27-23</span>
+            <span class="dates">61% confidence</span>
+          </li>
+          <li>
+            <span class="role">Michigan vs Oklahoma</span>
+            <span class="company">Oklahoma over Michigan, 27-20</span>
+            <span class="dates">62% confidence</span>
+          </li>
+          <li>
+            <span class="role">Minnesota vs Mississippi State</span>
+            <span class="company">Mississippi State over Minnesota, 30-27</span>
+            <span class="dates">54% confidence</span>
+          </li>
+          <li>
+            <span class="role">Pittsburgh vs UCF</span>
+            <span class="company">Pittsburgh over UCF, 34-27</span>
+            <span class="dates">74% confidence</span>
+          </li>
+          <li>
+            <span class="role">Purdue vs Wake Forest</span>
+            <span class="company">Wake Forest over Purdue, 27-24</span>
+            <span class="dates">55% confidence</span>
+          </li>
+          <li>
+            <span class="role">Syracuse vs California</span>
+            <span class="company">Syracuse over California, 31-24</span>
+            <span class="dates">72% confidence</span>
+          </li>
+          <li>
+            <span class="role">Texas vs Ohio State</span>
+            <span class="company">Texas over Ohio State, 27-24</span>
+            <span class="dates">53% confidence</span>
+          </li>
+        </ul>
+
+        <p class="label subhead">results: 6-4, updated Sep 22, 2026</p>
+        <p class="project-desc">Misses actually ran hotter on confidence than the hits this week (62%
+          average vs. 58%), small sample, but a reminder that confidence didn't track accuracy well
+          this week.</p>
+
+        <ul class="experience-list">
+          <li>
+            <span class="role">Air Force vs North Dakota State</span>
+            <span class="company">✅ North Dakota State won, 38-32</span>
+            <span class="dates">picked 24-21</span>
+          </li>
+          <li>
+            <span class="role">Army vs South Florida</span>
+            <span class="company">❌ South Florida won, 28-24</span>
+            <span class="dates">picked Army, 27-24</span>
+          </li>
+          <li>
+            <span class="role">Boise State vs Memphis</span>
+            <span class="company">✅ Boise State won, 38-20</span>
+            <span class="dates">picked 31-27</span>
+          </li>
+          <li>
+            <span class="role">Illinois vs Duke</span>
+            <span class="company">❌ Duke won, 31-27</span>
+            <span class="dates">picked Illinois, 27-23</span>
+          </li>
+          <li>
+            <span class="role">Michigan vs Oklahoma</span>
+            <span class="company">❌ Michigan won, 17-10</span>
+            <span class="dates">picked Oklahoma, 27-20</span>
+          </li>
+          <li>
+            <span class="role">Minnesota vs Mississippi State</span>
+            <span class="company">✅ Mississippi State won, 38-13</span>
+            <span class="dates">picked 30-27</span>
+          </li>
+          <li>
+            <span class="role">Pittsburgh vs UCF</span>
+            <span class="company">✅ Pittsburgh won, 12-7</span>
+            <span class="dates">picked 34-27</span>
+          </li>
+          <li>
+            <span class="role">Purdue vs Wake Forest</span>
+            <span class="company">✅ Wake Forest won, 38-36</span>
+            <span class="dates">picked 27-24</span>
+          </li>
+          <li>
+            <span class="role">Syracuse vs California</span>
+            <span class="company">❌ California won, 21-18</span>
+            <span class="dates">picked Syracuse, 31-24</span>
+          </li>
+          <li>
+            <span class="role">Texas vs Ohio State</span>
+            <span class="company">✅ Texas won, 24-23</span>
+            <span class="dates">picked 27-24</span>
+          </li>
+        </ul>
+      </details>
+
+      <details class="project">
         <summary class="project-head week-summary">
           <h3><span class="chevron">▸</span>Week 1, 2026</h3>
           <span class="dates">Posted Sep 4, 2026</span>
