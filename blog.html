@@ -19,7 +19,7 @@
           <a href="index.html" class="resume-btn">← Portfolio</a>
         </div>
       </div>
-      <p class="tagline">Weekly college football picks from a model I built, posted before kickoff, unedited.</p>
+      <p class="tagline">College football picks from a model I built, posted before kickoff, unedited.</p>
     </header>
 
         <section>
@@ -31,7 +31,7 @@
         percentile in 2025, on prompt and data formatting alone using the latest OpenAI model at the time), but I
         later added a trained statistical model to generate the predictions before
         passing them to the LLM for formatting.
-        The implementation is private for now, but I'll be posting the unedited results every week.<br><br>
+        The implementation is private for now, but I posted the unedited results for the first three weeks of 2026.<br><br>
 
         Realistically, I probably got lucky in 2025 since there was no trained model yet and just an LLM working off data I provided (though, I'd review the outputs every week with friends and other football fans to get feedback and tweak the data being pulled and what gets passed into the prompt). I do think
         that part held up well, but I can't fully separate "good setup" from "good luck" with one season of results. 2026's the actual test: XGBoost and the LLM working together, and I'm curious how much the baseline ends up shaping the LLM's calls. It's been a learning curve but I ended up with a 71% accurate model on <b>leak-free data.</b></p>
@@ -41,13 +41,13 @@
         information it wouldn't actually have at prediction time. That's a common pitfall where sports
         models look great in testing and fall apart in the real world.</em></p><br>
 
-      <p class="project-desc">I'll keep this updated with weekly posts, and post a full summary at the end of the season.</p>
+      <p class="project-desc">I stopped posting after Week 3 when I started a new job, also a lot happened for the Ducks this year :(</p>
     </section>
 
     <section id="posts">
       <h2><span class="label">weekly predictions</span></h2>
 
-      <p class="label subhead">season so far, through week 3</p>
+      <p class="label subhead">2026 results, weeks 1–3</p>
       <div class="stat-row">
         <div class="stat-tile">
           <span class="stat-label">LLM + Baseline</span>
@@ -404,49 +404,6 @@
           </li>
         </ul>
       </details>
-
-      <!--
-        WEEKLY POST TEMPLATE: copy this block above the most recent week's
-        post for each new week (newest post first). Each week is a native
-        <details>/<summary> element. No JS needed, click the title row to
-        expand or collapse it. Only the newest week should have the `open`
-        attribute; remove `open` from the previous week's <details> when you
-        add a new one, so exactly one week starts expanded.
-
-        STEP 1: post this part before kickoff.
-
-      <details class="project" open>
-        <summary class="project-head week-summary">
-          <h3><span class="chevron">▸</span>Week N, 2026</h3>
-          <span class="dates">Posted [date]</span>
-        </summary>
-        <p class="project-desc"><strong>Model used: [Model].</strong> [Short blurb about the week: how
-          confident overall, anything notable, no implementation specifics.]</p>
-
-        <p class="label subhead">picks</p>
-        <ul class="experience-list">
-          <li>
-            <span class="role">[Home] vs [Away]</span>
-            <span class="company">[Home] over [Away], [score]-[score]</span>
-            <span class="dates">[XX]% confidence</span>
-          </li>
-        </ul>
-      </details>
-
-        STEP 2: once games finish, add this block right after the picks
-        </ul> above and before </details> (don't touch the pre-game section).
-
-        <p class="label subhead">results: [W]-[L], updated [date]</p>
-        <p class="project-desc">[Optional note: confidence split between hits and misses, like Week 1's post.]</p>
-
-        <ul class="experience-list">
-          <li>
-            <span class="role">[Home] vs [Away]</span>
-            <span class="company">✅ or ❌ [Winner] won, [score]-[score]</span>
-            <span class="dates">picked [predicted score]</span>
-          </li>
-        </ul>
-      -->
     </section>
 
     <footer>
