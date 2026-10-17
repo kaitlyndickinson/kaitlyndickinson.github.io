@@ -17,9 +17,13 @@
         <h1>Kaitlyn Dickinson</h1>
       </div>
       <p class="tagline">Software Engineer</p>
+      <p class="tagline">Hi, I'm Kaitlyn! I currently work as a Software Developer where I'm developing features for a
+        FinTech company (RefiJet) in Denver. I've previously worked at EchoStar where I developed ticketing
+        infrastructure and worked across full-stack projects to improve agent and customer experience. Previously
+        interned at NASA and was part of the MECOP program. I like learning new things and making functional applications.</p>
       <div class="bubbles">
+        <span class="bubble bubble-domain">⚙️ Systems Thinking</span>
         <span class="bubble bubble-domain">📊 Data</span>
-        <span class="bubble bubble-domain">🗺️ Mapping</span>
         <span class="bubble bubble-domain">🛠️ Tooling</span>
         <span class="bubble bubble-domain">🤖 AI/ML</span>
         <span class="bubble">🥾 Hiking</span>
@@ -33,7 +37,8 @@
       <p class="stack-line"><strong>Languages</strong> — Python · SQL · TypeScript · JavaScript · Java · C++</p>
       <p class="stack-line"><strong>Frameworks & Libraries</strong> — Django · FastAPI · Flask · Angular · Streamlit ·
         LangChain</p>
-      <p class="stack-line"><strong>Cloud & DevOps</strong> — AWS · Airflow · Docker · CI/CD · Nginx</p>
+      <p class="stack-line"><strong>Cloud & DevOps</strong> — AWS (Athena, EC2, S3) · Airflow · Docker · CI/CD · Nginx
+      </p>
       <p class="stack-line"><strong>Databases & Tools</strong> — Snowflake · PostgreSQL · Databricks · ChromaDB · Git
       </p>
     </section>
@@ -79,12 +84,13 @@
             <a href="blog.html" class="project-link">Blog ↗</a>
           </div>
         </div>
-        <p class="project-desc">A just-for-fun side project to automate my picks for ESPN's College Pick'em
-          pool every week. Now backed by an LLM plus a trained statistical model. Code's private for now, but I posted
-          the first three weeks of 2026's picks publicly, unedited, before kickoff.</p>
+        <p class="project-desc">A project I made for fun to automate my picks for ESPN's College Pick'em
+          pool every week; started as a CLI tool retrieval pipeline for a RAG LLM integrating college football data.
+          Now integrates a trained statistical model into every call. Code is private for now, but I posted the first
+          three weeks of 2026's picks publicly.</p>
         <p class="learning"><span class="label">learned</span> Individual API calls with specific relevant analytics
           context did better than passing in all the history for that team every week and the AI does better than me at
-          making picks (top 99.9% percentile high, started in 2024).</p>
+          making picks (top 99.9% percentile high, started in 2024) + XGBoost (2026).</p>
       </article>
 
 
@@ -123,6 +129,20 @@
 
       <article class="project">
         <div class="project-head">
+          <h3>trailmix</h3>
+          <div class="project-links">
+            <a href="https://github.com/kaitlyndickinson/trailmix" target="_blank" rel="noopener"
+              class="project-link">GitHub ↗</a>
+          </div>
+        </div>
+        <p class="project-desc">Self-hostable hike planner for a group: shared checklists + what's open near the
+          trailhead that day. Made because I was tired of going to AllTrails (which is a great app) and then finding
+          things to do nearby after.</p>
+        <p class="learning"><span class="label">learned</span> How Edge Functions in Supabase work.</p>
+      </article>
+
+      <article class="project">
+        <div class="project-head">
           <h3>Planterbot (Senior Project)</h3>
           <div class="project-links">
             <a href="https://github.com/kaitlyndickinson/PlanterBot" target="_blank" rel="noopener"
@@ -137,6 +157,7 @@
           wiring up sensors and a WiFi module on the Arduino side, then building the PHP/MySQL backend to safely log and
           serve that data back to users.</p>
       </article>
+
       <article class="project">
         <div class="project-head">
           <h3>Internal Engineering AI Assistant (Biamp Systems)</h3>
@@ -147,19 +168,6 @@
           (including C++ code), embeddings, multi-step retrieval routing, designing effective and maintainable pipelines
           for AI applications, and optimizing for multiple use-cases.</p>
       </article>
-
-
-
-      <article class="project">
-        <div class="project-head">
-          <h3>Knowledge Base Sync Pipeline (EchoStar)</h3>
-        </div>
-        <p class="project-desc">An automated pipeline that ingests knowledge base content from an internal CMS, strips
-          HTML, filters by metadata, and syncs changes to a customer-facing support platform.</p>
-        <p class="learning"><span class="label">learned</span> How to design a change-detection-based sync pipeline that
-          reconciles state across two systems without manual intervention.</p>
-      </article>
-    </section>
 
     <footer>
       <div class="links">
