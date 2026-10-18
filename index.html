@@ -5,21 +5,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kaitlyn Dickinson</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌙</text></svg>">
+  <meta name="description" content="Kaitlyn Dickinson — Software Engineer in Denver.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=3">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 
 <body>
 
-  <main>
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <a href="#top" class="nav-mark">kd</a>
+    <div class="nav-links">
+      <a href="#skills">skills</a>
+      <a href="#experience">experience</a>
+      <a href="#projects">projects</a>
+    </div>
+  </nav>
+
+  <main id="top">
 
     <header class="hero">
       <div class="hero-top">
         <h1>Kaitlyn Dickinson</h1>
       </div>
-      <p class="tagline">Software Engineer</p>
-      <p class="tagline">Hi, I'm Kaitlyn! I currently work as a Software Engineer where I'm developing features for a
-        Fintech company (RefiJet) in the auto refinance space in Denver. I've previously worked at EchoStar where 
-        I developed ticketing infrastructure and worked across full-stack projects to improve agent and customer experience. 
+      <p class="tagline role-line">Software Engineer</p>
+      <p class="tagline">Hi, I'm Kaitlyn! I currently work as a Software Engineer where I'm developing features at
+        RefiJet, a fintech company in the auto refinance space in Denver. I've previously worked at EchoStar where
+        I developed ticketing infrastructure and worked across full-stack projects to improve agent and customer experience.
         Previously interned at NASA and former MECOP participant. I like learning new things and making functional applications.</p>
       <div class="bubbles">
         <span class="bubble bubble-domain">⚙️ Systems Thinking</span>
@@ -32,21 +50,37 @@
       <p class="education">B.S. Software Engineering Technology — Oregon Institute of Technology</p>
     </header>
 
-    <section>
+    <section id="skills" class="reveal">
       <h2><span class="label">skills</span></h2>
-      <p class="stack-line"><strong>Languages</strong> — Python · SQL · TypeScript · JavaScript · Java · C++</p>
-      <p class="stack-line"><strong>Frameworks & Libraries</strong> — Django · FastAPI · Flask · Angular · Streamlit ·
-        LangChain</p>
-      <p class="stack-line"><strong>Cloud & DevOps</strong> — AWS (Athena, EC2, S3) · Airflow · Docker · CI/CD · Nginx
-      </p>
-      <p class="stack-line"><strong>Databases & Tools</strong> — Snowflake · PostgreSQL · Databricks · ChromaDB · Git
-      </p>
+      <p class="skill-legend"><span class="legend-dot"></span>using now</p>
+      <div class="skill-grid">
+        <div class="skill-group skill-group--wide">
+          <span class="skill-title">Languages</span>
+          <div class="chips"><span class="now">Python</span><span class="now">Java</span><span class="now">TypeScript</span><span class="now">SQL</span><span>C++</span></div>
+        </div>
+        <div class="skill-group">
+          <span class="skill-title">AI & LLM Engineering</span>
+          <div class="chips"><span class="now">Claude Code</span><span class="now">MCP</span><span class="now">Spec-driven dev (OpenSpec)</span><span>RAG pipelines</span><span>Vector search (ChromaDB)</span><span>LangChain</span><span>LLM evals</span><span>Agents &amp; tool use</span></div>
+        </div>
+        <div class="skill-group">
+          <span class="skill-title">Data & ML</span>
+          <div class="chips"><span class="now">Airflow</span><span class="now">pandas</span><span>Snowflake</span><span>Databricks</span><span>XGBoost</span><span>ETL pipelines</span></div>
+        </div>
+        <div class="skill-group">
+          <span class="skill-title">Full Stack</span>
+          <div class="chips"><span class="now">Spring Boot</span><span class="now">PostgreSQL</span><span class="now">Supabase</span><span class="now">REST APIs</span><span>Angular</span><span>Django</span><span>FastAPI</span><span>Flask</span><span>pytest</span></div>
+        </div>
+        <div class="skill-group">
+          <span class="skill-title">Cloud & DevOps</span>
+          <div class="chips"><span class="now">AWS</span><span class="now">Docker</span><span class="now">Git</span><span class="now">Vercel</span><span class="now">CI/CD</span><span>Linux</span></div>
+        </div>
+      </div>
     </section>
 
-    <section>
+    <section id="experience" class="reveal">
       <h2><span class="label">work experience</span></h2>
-      <ul class="experience-list">
-        <li>
+      <ul class="experience-list timeline">
+        <li class="current">
           <span class="role">Software Developer 2</span>
           <span class="company">RefiJet</span>
           <span class="dates">Oct 2026 – Present</span>
@@ -74,110 +108,115 @@
       </ul>
     </section>
 
-    <section>
-      <h2><span class="label">projects</span></h2>
+    <section id="projects">
+      <h2 class="reveal"><span class="label">projects</span></h2>
 
-      <article class="project">
-        <div class="project-head">
-          <h3>ESPN College Pick'em Predictor</h3>
-          <div class="project-links">
-            <a href="blog.html" class="project-link">Blog ↗</a>
+      <div class="project-list">
+
+        <article class="project card reveal">
+          <div class="project-head">
+            <h3>ESPN College Pick'em Predictor</h3>
+            <div class="project-links">
+              <a href="blog.html" class="project-link">Blog ↗</a>
+            </div>
           </div>
-        </div>
-        <p class="project-desc">A project I made for fun to automate my picks for ESPN's College Pick'em
-          pool every week; started as a CLI tool retrieval pipeline for a RAG LLM integrating college football data.
-          Now integrates a trained statistical model into every call. Code is private for now, but I posted the first
-          three weeks of 2026's picks publicly.</p>
-        <p class="learning"><span class="label">learned</span> Individual API calls with specific relevant analytics
-          context did better than passing in all the history for that team every week and the AI does better than me at
-          making picks (top 99.9% percentile high, started in 2024) + XGBoost (2026).</p>
-      </article>
+          <p class="project-desc">A project I made for fun to automate my picks for ESPN's College Pick'em
+            pool every week; started as a CLI tool retrieval pipeline for a RAG LLM integrating college football data.
+            Now integrates a trained statistical model into every call. Code is private for now, but I posted the first
+            three weeks of 2026's picks publicly.</p>
+          <p class="learning"><span class="label">learned</span> Individual API calls with specific relevant analytics
+            context did better than passing in all the history for that team every week and the AI does better than me at
+            making picks (top 99.9% percentile high, started in 2024) + XGBoost (2026).</p>
+        </article>
 
-
-      <article class="project">
-        <div class="project-head">
-          <h3>Celestial Mapping System</h3>
-          <div class="project-links">
-            <a href="https://spacegrant.oregonstate.edu/sites/spacegrant.oregonstate.edu/files/c9-celestial-mapping-system.pdf"
-              target="_blank" rel="noopener" class="project-link">Poster ↗</a>
-            <a href="https://celestialmappingsystem.arc.nasa.gov/" target="_blank" rel="noopener"
-              class="project-link">Website ↗</a>
+        <article class="project card reveal">
+          <div class="project-head">
+            <h3>Celestial Mapping System</h3>
+            <div class="project-links">
+              <a href="https://spacegrant.oregonstate.edu/sites/spacegrant.oregonstate.edu/files/c9-celestial-mapping-system.pdf"
+                target="_blank" rel="noopener" class="project-link">Poster ↗</a>
+              <a href="https://celestialmappingsystem.arc.nasa.gov/" target="_blank" rel="noopener"
+                class="project-link">Website ↗</a>
+            </div>
           </div>
-        </div>
-        <p class="project-desc">A 3D lunar/planetary visualization platform built on the NASA WorldWind SDK, processing
-          large geospatial datasets for real-time rendering of surface data.</p>
-        <p class="learning"><span class="label">learned</span> How to work with large-scale geospatial data and design a
-          custom tessellation algorithm to reduce distortion in real-time 3D rendering.</p>
-      </article>
+          <p class="project-desc">A 3D lunar/planetary visualization platform built on the NASA WorldWind SDK, processing
+            large geospatial datasets for real-time rendering of surface data.</p>
+          <p class="learning"><span class="label">learned</span> How to work with large-scale geospatial data and design a
+            custom tessellation algorithm to reduce distortion in real-time 3D rendering.</p>
+        </article>
 
-
-      <article class="project">
-        <div class="project-head">
-          <h3>Pokopia Tracker</h3>
-          <div class="project-links">
-            <a href="https://github.com/kaitlyndickinson/pokopia-tracker" target="_blank" rel="noopener"
-              class="project-link">GitHub ↗</a>
-            <a href="https://pokopia-tracker-tau.vercel.app/" target="_blank" rel="noopener"
-              class="project-link">Website ↗</a>
+        <article class="project card reveal">
+          <div class="project-head">
+            <h3>Pokopia Tracker</h3>
+            <div class="project-links">
+              <a href="https://github.com/kaitlyndickinson/pokopia-tracker" target="_blank" rel="noopener"
+                class="project-link">GitHub ↗</a>
+              <a href="https://pokopia-tracker-tau.vercel.app/" target="_blank" rel="noopener"
+                class="project-link">Website ↗</a>
+            </div>
           </div>
-        </div>
-        <p class="project-desc">A personal habitat and Pokémon collection tracker for Pokopia: search and filter
-          habitats by type and area, track catch progress across 221 spawns, and import/export progress.</p>
-        <p class="learning"><span class="label">learned</span> How to deploy an app on Vercel and work with local
-          storage for persisting progress client-side.</p>
-      </article>
+          <p class="project-desc">A personal habitat and Pokémon collection tracker for Pokopia: search and filter
+            habitats by type and area, track catch progress across 221 spawns, and import/export progress.</p>
+          <p class="learning"><span class="label">learned</span> How to deploy an app on Vercel and work with local
+            storage for persisting progress client-side.</p>
+        </article>
 
-      <article class="project">
-        <div class="project-head">
-          <h3>trailmix</h3>
-          <div class="project-links">
-            <a href="https://github.com/kaitlyndickinson/trailmix" target="_blank" rel="noopener"
-              class="project-link">GitHub ↗</a>
+        <article class="project card reveal">
+          <div class="project-head">
+            <h3>trailmix</h3>
+            <div class="project-links">
+              <a href="https://github.com/kaitlyndickinson/trailmix" target="_blank" rel="noopener"
+                class="project-link">GitHub ↗</a>
+            </div>
           </div>
-        </div>
-        <p class="project-desc">Self-hostable hike planner for a group: shared checklists + what's open near the
-          trailhead that day. Made because I was tired of going to AllTrails (which is a great app) and then finding
-          things to do nearby after.</p>
-        <p class="learning"><span class="label">learned</span> How Edge Functions in Supabase work.</p>
-      </article>
+          <p class="project-desc">Self-hostable hike planner for a group: shared checklists + what's open near the
+            trailhead that day. Made because I was tired of going to AllTrails (which is a great app) and then finding
+            things to do nearby after.</p>
+          <p class="learning"><span class="label">learned</span> How Edge Functions in Supabase work.</p>
+        </article>
 
-      <article class="project">
-        <div class="project-head">
-          <h3>Planterbot (Senior Project)</h3>
-          <div class="project-links">
-            <a href="https://github.com/kaitlyndickinson/PlanterBot" target="_blank" rel="noopener"
-              class="project-link">GitHub ↗</a>
+        <article class="project card reveal">
+          <div class="project-head">
+            <h3>Planterbot (Senior Project)</h3>
+            <div class="project-links">
+              <a href="https://github.com/kaitlyndickinson/PlanterBot" target="_blank" rel="noopener"
+                class="project-link">GitHub ↗</a>
+            </div>
           </div>
-        </div>
+          <p class="project-desc">An Arduino-driven robot that autonomously seeks out sunlight to keep a plant alive,
+            paired with a PHP/MySQL web app for viewing, filtering, and exporting the robot's sensor data.</p>
+          <p class="learning"><span class="label">learned</span> How to bridge embedded hardware and a full web stack,
+            wiring up sensors and a WiFi module on the Arduino side, then building the PHP/MySQL backend to safely log and
+            serve that data back to users.</p>
+        </article>
 
-        </div>
-        <p class="project-desc">An Arduino-driven robot that autonomously seeks out sunlight to keep a plant alive,
-          paired with a PHP/MySQL web app for viewing, filtering, and exporting the robot's sensor data.</p>
-        <p class="learning"><span class="label">learned</span>How to bridge embedded hardware and a full web stack,
-          wiring up sensors and a WiFi module on the Arduino side, then building the PHP/MySQL backend to safely log and
-          serve that data back to users.</p>
-      </article>
+        <article class="project card reveal">
+          <div class="project-head">
+            <h3>Internal Engineering AI Assistant (Biamp Systems)</h3>
+          </div>
+          <p class="project-desc">A RAG-based chatbot built for an engineering team with document ingestion, multi-hop
+            retrieval, and a ChromaDB vector store, built end to end.</p>
+          <p class="learning"><span class="label">learned</span> How to design a RAG pipeline from scratch: chunking
+            (including C++ code), embeddings, multi-step retrieval routing, designing effective and maintainable pipelines
+            for AI applications, and optimizing for multiple use-cases.</p>
+        </article>
 
-      <article class="project">
-        <div class="project-head">
-          <h3>Internal Engineering AI Assistant (Biamp Systems)</h3>
-        </div>
-        <p class="project-desc">A RAG-based chatbot built for an engineering team with document ingestion, multi-hop
-          retrieval, and a ChromaDB vector store, built end to end.</p>
-        <p class="learning"><span class="label">learned</span> How to design a RAG pipeline from scratch: chunking
-          (including C++ code), embeddings, multi-step retrieval routing, designing effective and maintainable pipelines
-          for AI applications, and optimizing for multiple use-cases.</p>
-      </article>
+      </div>
+    </section>
 
-    <footer>
+    <footer class="reveal">
       <div class="links">
         <a href="https://linkedin.com/in/kaitlyndickinson" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:kaitlynjd.w@gmail.com">Email</a>
+        <a href="mailto:kaitlynjd.w@gmail.com" class="copy-email" data-email="kaitlynjd.w@gmail.com">Email</a>
         <a href="https://github.com/kaitlyndickinson" target="_blank" rel="noopener">GitHub</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
       </div>
     </footer>
 
   </main>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js?v=3"></script>
 
 </body>
 
