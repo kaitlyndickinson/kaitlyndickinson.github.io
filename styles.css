@@ -442,7 +442,8 @@ section h2 .label::before {
   grid-template-columns: 1fr auto;
   grid-template-areas:
     "role dates"
-    "company dates";
+    "company dates"
+    "note note";
   gap: 0 16px;
   padding: 12px 0;
   border-bottom: none;
@@ -474,6 +475,13 @@ section h2 .label::before {
 .timeline .role { grid-area: role; }
 .timeline .company { grid-area: company; font-size: 0.9rem; }
 .timeline .dates { grid-area: dates; align-self: center; text-align: right; }
+.timeline .note {
+  grid-area: note;
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
 
 /* ---------- projects ---------- */
 
@@ -737,7 +745,8 @@ footer {
     grid-template-areas:
       "role"
       "company"
-      "dates";
+      "dates"
+      "note";
     grid-template-columns: 1fr;
   }
 
