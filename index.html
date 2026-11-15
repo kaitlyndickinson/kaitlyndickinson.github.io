@@ -8,12 +8,20 @@
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌙</text></svg>">
   <meta name="description" content="Kaitlyn Dickinson — Full-stack software engineer in Denver.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kaitlyndickinson.github.io/">
+  <meta property="og:title" content="Kaitlyn Dickinson">
+  <meta property="og:description" content="Full-stack software engineer in Denver.">
+  <meta property="og:image" content="https://kaitlyndickinson.github.io/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=5">
   <script>document.documentElement.classList.add("js");</script>
 </head>
 
@@ -83,7 +91,7 @@
           <span class="skill-title">Data & ML</span>
           <div class="chips">
             <span>Airflow</span><span>pandas</span><span>Snowflake</span><span>Databricks</span><span>ETL
-              pipelines</span><span>Event-based data</span><span>XGBoost</span>
+              pipelines</span><span>Event-based data</span>
           </div>
         </div>
         <div class="skill-group">
@@ -108,9 +116,9 @@
           <span class="role">Application Developer III</span>
           <span class="company">EchoStar</span>
           <span class="dates">Dec 2024 – Sep 2026</span>
-          <p class="note">Primary developer on an internal ticketing application (Django + Angular), plus the Airflow
-            pipelines
-            and integrations around it (Freshdesk, Salesforce).</p>
+          <p class="note">Primary developer on an internal ticketing application (Django + Angular) handling 2,000+
+            tickets a day, plus the Airflow pipelines and integrations around it (Freshdesk, Salesforce). Replaced its
+            manual outage recovery process, taking recovery from hours to seconds.</p>
         </li>
         <li>
           <span class="role">Software Engineering Co-Op | MECOP</span>
@@ -139,8 +147,11 @@
       <h2 class="reveal"><span class="label">projects</span></h2>
 
       <div class="project-list">
-
         <article class="project card reveal">
+          <a class="project-shot" href="https://celestialmappingsystem.arc.nasa.gov/" target="_blank" rel="noopener"
+            tabindex="-1" aria-hidden="true">
+            <img src="img/projects/cms.webp" alt="" width="1262" height="631" loading="lazy">
+          </a>
           <div class="project-head">
             <h3>Celestial Mapping System</h3>
             <div class="project-links">
@@ -159,6 +170,10 @@
         </article>
 
         <article class="project card reveal">
+          <a class="project-shot" href="https://github.com/kaitlyndickinson/recur-audit" target="_blank" rel="noopener"
+            tabindex="-1" aria-hidden="true">
+            <img src="img/projects/recur-audit.webp" alt="" width="1280" height="640" loading="lazy">
+          </a>
           <div class="project-head">
             <h3>recur-audit</h3>
             <div class="project-links">
@@ -170,12 +185,35 @@
             statements, and helps clean up an old Gmail inbox: who's still billing you, what to unsubscribe from, and
             which accounts to move to a new address. Runs on my home server, private to my household through Tailscale.
             It reads only email headers, never message contents.</p>
-          <p class="learning"><span class="label">learned</span>htmx for interactive pages without a JavaScript
+          <p class="learning"><span class="label">learned</span> htmx for interactive pages without a JavaScript
             framework, and deploying a private app as its own locked-down Tailscale device that only my household can
             reach.</p>
         </article>
 
         <article class="project card reveal">
+          <div class="project-shot" aria-hidden="true">
+            <img src="img/projects/jarvis.webp" alt="" width="1280" height="640" loading="lazy">
+          </div>
+          <div class="project-head">
+            <h3>Jarvis (Biamp Systems)</h3>
+            <div class="project-links">
+              <span class="project-tag">internal · 2023</span>
+            </div>
+          </div>
+          <p class="project-desc">An internal chatbot so Biamp's engineers could ask questions across scattered
+            technical docs and C++ code and get answers with sources. My first time working with AI: I built it end to
+            end, from a Streamlit prototype to a Flask app on IIS behind Active Directory, and kept improving it from
+            engineers' feedback.</p>
+          <p class="learning"><span class="label">learned</span> Multi-step retrieval across multiple ChromaDB
+            collections. One big collection kept surfacing the same few docs, so I split them up (firmware, DSP, code,
+            specs) and had the model pick which ones to search before answering.</p>
+        </article>
+
+        <article class="project card reveal">
+          <a class="project-shot" href="https://github.com/kaitlyndickinson/trailmix" target="_blank" rel="noopener"
+            tabindex="-1" aria-hidden="true">
+            <img src="img/projects/trailmix.webp" alt="" width="1280" height="640" loading="lazy">
+          </a>
           <div class="project-head">
             <h3>trailmix</h3>
             <div class="project-links">
@@ -199,13 +237,19 @@
           </div>
           <p class="project-desc">A project I made for fun to automate my picks for ESPN's College Pick'em
             pool every week. It started in 2024 as a CLI that pulled college football data into an LLM, and in 2026 I
-            added a trained XGBoost model to every call. It makes better picks than I do (it's peaked in the 99.9th
+            added an XGBoost baseline to every call, using a dataset I pulled and curated from College Football
+            Data. It makes better picks than I do (it's peaked in the 99.9th
             percentile). Code is private for now, but I posted the first three weeks of 2026's picks publicly.</p>
-          <p class="learning"><span class="label">learned</span> How to ground LLM prompts in a source of truth: an
-            XGBoost model I trained on leak-free data (71% accurate) that the LLM reasons against.</p>
+          <p class="learning"><span class="label">learned</span> How to ground LLM picks in a statistical baseline the
+            LLM reasons against, and why leak-free data matters: the baseline is 71% accurate on seasons it never
+            saw.</p>
         </article>
 
         <article class="project card reveal">
+          <a class="project-shot" href="https://pokopia-tracker-tau.vercel.app/" target="_blank" rel="noopener"
+            tabindex="-1" aria-hidden="true">
+            <img src="img/projects/pokopia.webp" alt="" width="1280" height="640" loading="lazy">
+          </a>
           <div class="project-head">
             <h3>Pokopia Tracker</h3>
             <div class="project-links">
@@ -222,16 +266,10 @@
         </article>
 
         <article class="project card reveal">
-          <div class="project-head">
-            <h3>Internal Engineering AI Assistant (Biamp Systems)</h3>
-          </div>
-          <p class="project-desc">A RAG-based chatbot built for an engineering team with document ingestion, multi-hop
-            retrieval, and a ChromaDB vector store, built and shipped end to end.</p>
-          <p class="learning"><span class="label">learned</span> How to design a RAG pipeline from scratch: chunking
-            (including C++ code), embeddings, and routing questions to the right document collection.</p>
-        </article>
-
-        <article class="project card reveal">
+          <a class="project-shot" href="https://github.com/kaitlyndickinson/PlanterBot" target="_blank" rel="noopener"
+            tabindex="-1" aria-hidden="true">
+            <img src="img/projects/planterbot.webp" alt="" width="1280" height="640" loading="lazy">
+          </a>
           <div class="project-head">
             <h3>Planterbot (Senior Project)</h3>
             <div class="project-links">

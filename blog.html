@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
 
 <body>
@@ -26,7 +26,7 @@
           <a href="index.html" class="resume-btn">← Portfolio</a>
         </div>
       </div>
-      <p class="tagline">College football picks from a model I built, posted before kickoff, unedited.</p>
+      <p class="tagline">College football picks from my LLM + baseline model setup, posted before kickoff, unedited.</p>
     </header>
 
         <section>
@@ -41,7 +41,7 @@
         The implementation is private for now, but I posted the unedited results for the first three weeks of 2026.<br><br>
 
         Realistically, I probably got lucky in 2025 since there was no trained model yet and just an LLM working off data I provided (though, I'd review the outputs every week with friends and other football fans to get feedback and tweak the data being pulled and what gets passed into the prompt). I do think
-        that part held up well, but I can't fully separate "good setup" from "good luck" with one season of results. 2026's the actual test: XGBoost and the LLM working together, and I'm curious how much the baseline ends up shaping the LLM's calls. It's been a learning curve but I ended up with a 71% accurate model on <b>leak-free data.</b></p>
+        that part held up well, but I can't fully separate "good setup" from "good luck" with one season of results. 2026's the actual test: XGBoost and the LLM working together, and I'm curious how much the baseline ends up shaping the LLM's calls. The baseline, using a dataset I pulled and curated, is 71% accurate on <b>leak-free data.</b></p>
 
       <p class="learning"><span class="label">aside</span> <em>That means it's trained on seasons before
         the ones it's tested on, not a random shuffle across years, so it can't accidentally learn from
